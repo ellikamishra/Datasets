@@ -5,9 +5,10 @@ const cors=require('cors');
 const app=express();
 const PORT=process.env.PORT||3001; 
 app.use(cors());
-app.use(express.json());
+//app.use(express.json());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static("./"));
+//app.use(express.static("./"));
 const db=mysql.createPool({
 
     host: 'localhost',
@@ -62,7 +63,7 @@ app.post('/api/login',(req,res)=>
     const name=req.body.name;
     
     const pswd=req.body.password;
-    
+    console.log(pswd);
     const role=req.body.role
     db.getConnection(function(error, connection) {
         // execute query
@@ -73,14 +74,16 @@ app.post('/api/login',(req,res)=>
     
     }
     else{    
-    connection.query(`SELECT* from Users where name = ? and pswd = ? `,[name,pswd],(err,result,fields)=>{
+    connection.query("SELECT * from Users WHERE name = ?",[name],(err,result,fields)=>{
+       
         if(err){
+            console.log(err);
         return  res.send({err:err});
-        console.log(err);
+      
         }
-        if(result){
+        if(result.length >0){
             console.log(result);
-        res.json(result);
+        res.send(result);
         
        }
         else{
@@ -99,8 +102,9 @@ app.post('/api/cart',(req,res)=>
     const cost_due=Number(req.body.cost_due);
     const cust_name=req.body.cust_name;
     const cust_id=Number(req.body.cust_id);
-    console.log(cost_due)
-    console.log(no_of_items)
+    const farm_id=req.body.farm_id;
+    const crop_id=req.body.crop_id;
+    console.log(farm_id[0]);
     db.getConnection(function(error, connection) {
         // execute query
         // ...
@@ -110,13 +114,74 @@ app.post('/api/cart',(req,res)=>
     
     }
     else{    
-    connection.query('INSERT INTO orders(no_of_items,cost_due,cust_name,cust_id) VALUES (?,?,?,?)',[no_of_items,cost_due,cust_name,cust_id],(err,result)=>{
+    connection.query('INSERT INTO orders(no_of_items,cost_due,cust_name,cust_id,farm_id,crop_id) VALUES (?,?,?,?,?,?)',[no_of_items,cost_due,cust_name,cust_id,farm_id[0],crop_id[0]],(err,result)=>{
         if(err){
         return  res.send({err:err});
         console.log(err);
         }
         else if(result){
+            console.log(cost_due)
+            console.log(no_of_items)
         res.send(result);
+       }
+        else{
+         res.send({message:"Invalid credentials!"});  
+        }
+    });
+  //  for(int i=0;i<farm_id[0].length)
+    //farm_id[0].forEach(connection.query('INSERT INTO farm_ord(fid) VALUES(?)',[],(err,result)=>))
+//    let index=0;
+//     while(index < farm_id[0].length)
+//     {
+//         connection.query('INSERT INTO farm_ord(fid) VALUES(?)',[farm_id[0][index]],(err,result)=>{
+//             if(err){
+//                 console.log(err);
+//                 return  res.send({err:err});
+                
+//                 }
+//                 else if(result){
+//                     console.log(cost_due)
+//                     console.log(no_of_items)
+//                 res.send(result);
+//                }
+//                 else{
+//                  res.send({message:"Invalid credentials!"});  
+//                 }
+//         })
+//         index++;
+//     }
+    }
+      });
+      //res.send('hello');
+
+});
+app.post('/api/admin',(req,res)=>
+{
+    const uname=req.body.name;
+    
+    const pswd=req.body.password;
+    //console.log(pswd);
+    const role=req.body.role
+    db.getConnection(function(error, connection) {
+        // execute query
+        // ...
+    if(error)
+    {
+        console.log(error);
+    
+    }
+    else{    
+    connection.query("SELECT * from Admin WHERE uname = ?",[uname],(err,result,fields)=>{
+       
+        if(err){
+            console.log(err);
+        return  res.send({err:err});
+      
+        }
+        if(result){
+            console.log(result);
+        res.send(result);
+        
        }
         else{
          res.send({message:"Invalid credentials!"});  
@@ -127,7 +192,6 @@ app.post('/api/cart',(req,res)=>
       //res.send('hello');
 
 });
-
 app.listen(PORT,(req,res)=>{                          //app listening to port (localhost),using postman app to get and post requests
     console.log(`listening to port ${PORT}`);
 })
