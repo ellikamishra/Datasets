@@ -192,7 +192,7 @@ app.post('/api/admin',(req,res)=>
       //res.send('hello');
 
 });
-app.listen(PORT,(req,res)=>{                          //app listening to port (localhost),using postman app to get and post requests
+app.listen(PORT,(req,res)=>{                          
     console.log(`listening to port ${PORT}`);
 })
 
