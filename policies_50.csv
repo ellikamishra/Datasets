@@ -1,0 +1,88 @@
+Remote Database Scanner - SIEM,Network Scanning and Enumeration,Description: This use case detects an external entity trying to access databases by reaching the ports that the Database are hosted on Technique: Aggregated Event Analytics Compliance: GDPR Type: SIEM,Low,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+Outbound TOR Traffic - SIEM,Circumvention of controls,"Description : traffic to tor exit nodes identify a malicious entry attempting to circumvent the organizations control Technique:  Individual Event Analytics Compliance: SOX,PCI DSS,GDPR, HIPAA AttributeType: SIEM ",Medium,SECURITY POLICY VIOLATION,NULL,Next Generation Firewall
+Possible Account Sharing - Next Gen Firewall,Valid Accounts,"Description: This violation can be indicative of possible account sharing
+   Technique Used:   Event Attribution                                                                 Version : VPN-20190222",Low,ACCOUNT MISUSE,Fortigate,Next Generation Firewall
+Landspeed anomaly on VPN - Next Gen Firewall,Valid Accounts,"Description: Landspeed violation may be indicative of a possible account sharing or an account takeover attempt
+Technique Used: Landspeed anomaly detection",Low,ACCOUNT MISUSE,Fortigate,Next Generation Firewall
+RDP Access allowed from the internet - SIEM,Application Layer Protocol,Description: RDP Access allowed from the internet can be an indication of malicious traffic to an internal network technique: Individual Event Analytics Compliance: PCI DSS AttributeType: SIEM,Low,ALERT,NULL,Next Generation Firewall
+Scan over plain text ports - SIEM ,Network Scanning and Enumeration,"Description: Portscan on network traffic may be indicative of malicious insider/cyber scan or enumeration activity in an attempt to uncover vulnerable endpoints.
+Technique Used: Enumeration Behavior anomaly for network port scans      Compliance: PCI DSS, HIPAA  SNYPER_ERROR_0001 : Incident Management/Command Screen can potentially have Display problems due to policy inconsistency ",Low,ALERT,NULL,Next Generation Firewall
+RDP Attempt from Malicious IP - SIEM,Suspicious network traffic,"Description: This use case detects if RDP attempt happens from a Malicious IP address Technique: Individual Event Analytics Compliance: SOX, PCI DSS, HIPAA Type: SIEM",Low,ALERT,NULL,Next Generation Firewall
+Monitoring Inbound malicious IP addresses - SIEM,Activity from malicious address,"Description: inbound traffic from malicious IP addresses is indicative of a malicious payload or process which would cause an endpoint to communicate with known bad IP addresses.
+Technique Used: Threat intelligence correlation
+AttributeType: SIEM  Note: This policy has been deprecated as part of the recent Snypr releases. Date: April26th 2021",Low,MALWARE,NULL,Next Generation Firewall
+External Port scan - SIEM,Network Scanning and Enumeration,Description: External Port scan is an indication of a recon attempt from an external address Technique: Aggregated Event Analytics Compliance HIPAA AttributeType: SIEM ,Low,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+Brute Force Attack - Next Gen Firewall,Brute Force,"Description: Repeat Failed logins could be indicative of a possible account takeover attempt using brute-force technique. Logon failure reason could further indicate the severity of this attack.
+ Technique: Entity attribution. Type : SIEM",Low,ALERT,Fortigate,Next Generation Firewall
+User connecting to infected sites - SIEM,Suspicious web request,"Description: Detects when user is trying to connect to infected site Technique:  Individual Event Analytics Compliance: SOX,PCI DSS,GDPR, HIPAA AttributeType: SIEM ",Low,ALERT,NULL,Next Generation Firewall
+Zone Transfer from External to Internal - SIEM,DNS traffic anomaly,"Description:  External to Internal DNS zone transfers may be indicative of a malicious entity attempting to communicate on DNS ports over TCP
+Technique:  Individual Event Analytics Compliance: SOX,PCI DSS,HIPAA AttributeType: SIEM  Note: This policy has been deprecated as part of the recent Snypr releases. Date: April26th 2021",Low,MALWARE,NULL,Next Generation Firewall
+System running external scan - SIEM ,Network Scanning and Enumeration,"Description: Portscan on network traffic may be indicative of malicious insider/cyber scan or enumeration activity in an attempt to uncover vulnerable endpoints. Technique Used: Enumeration Behavior anomaly for network port scans      Compliance: PCI DSS, HIPAA Note: There are duplicate copies of this policy. This may result in violation metadata not loading properly on the command center. Note: This policy has been deprecated as part of the recent Snypr releases. Date: April26th 2021 SNYPER_ERROR_0001 : Incident Management/Command Screen can potentially have Display problems due to policy inconsistency ",Low,MALWARE,NULL,Next Generation Firewall
+Ping Sweep or ICMP Inbound Scan - SIEM,Network Scanning and Enumeration,"Port scan from an external system to the internal network may be external system tries to get access on other endpoints of network Technique Used : Enumeration behavior Compliances :SOX,PCI DSS,HIPAA",Low,ALERT,NULL,Next Generation Firewall
+Internal System running port scan - Vertical SIEM,Network Scanning and Enumeration,"Description: Port scan from an internal system to the internal network may be a possible endpoint infected by malware and tries to get access on other endpoints of network. On 5/19/21, SX recommended we disable this policy as it has been decommissioned in the master content. They further indicated it was causing major issues with processing. This policy is being disabled. Technique Used : Enumeration behavior Compliances :  SOX,PCI DSS,HIPAA Type: SIEM",Low,MALWARE,NULL,Next Generation Firewall
+Remote Recon Network Sweep or scan - SIEM,Network Scanning and Enumeration,Description: Remote Recon Network Sweep or scan is an indication of attempts on an internal network  from a remote host in less time frame Technique: Aggregated Event Analytics Compliance: PCI DSS AttributeType: SIEM ,Low,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+Activity by terminated user on Firewall - SIEM,Activity by Terminated User,"Description: This use case detects terminated user performing an activity or identify information incorrectly updated on AD Technique: Individual Event Analytics Compliance: SOX, PCI DSS, HIPAA Type: SIEM",Low,ALERT,NULL,Next Generation Firewall
+Possible Enumeration over LDAP Port - SIEM,Suspicious network traffic,Technique: Aggregate Event Analytics Type : SIEM,None,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+Possible host enumeration observed - SIEM,Suspicious network traffic,Technique: Aggregate Event Analytics Type : SIEM Note: This policy has been deprecated as part of the recent Snypr releases. Date: April26th 2021,Low,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+File Transfer Using Non Standard Port - SIEM,Suspicious FTP - Use of insecure file transfer methods,"Description : File Transfer Using Non-Standard Port is an indication of endpoint is infected by malware Technique:  Individual Event Analytics Compliance: SOX,PCI DSS,HIPAA AttributeType: SIEM ",Low,MALWARE,NULL,Next Generation Firewall
+Possible port scan observed - SIEM,Suspicious network traffic,Technique: Aggregate Event Analytics Type : SIEM,Low,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+Outbound Spamhaus observed Traffic - SIEM,Traffic to known malicious websites,"Description: Outbound traffic from the endpoint to ip addresses are blocked by Spamhaus  is an indication of the endpoint is affected by malware  Technique:  Individual Event Analytics Compliance: SOX,PCI DSS,GDPR, HIPAA AttributeType: SIEM ",Low,MALWARE,NULL,Next Generation Firewall
+External source scan to Internal network - SIEM,Network Scanning and Enumeration,Description: Port scan from an external entry over network traffic may be indicative of malicious external entity attempting to uncover vulnerable endpoints to gain access to a network                              Technique Used : Aggregated event analysis for network port scan Type:SIEM,None,ALERT,Netscaler VPN-Adnoc,Next Generation Firewall
+Rare Filetype Observed - Next Gen Firewall,Suspicious file type detected,"Rare file type on firewall traffic may be an indicative of a malicious entity attempting to evade defensive measures.
+ Technique Used: Rare Behavior Note: This policy has been deprecated as part of the recent Snypr releases. Date: April26th 2021",None,ALERT,NULL,Next Generation Firewall
+External network port scan - SIEM,Network Scanning and Enumeration,"Unauthorized Web Vulnerability Scanning Attempt From Internal IP Technique: Individual Event Analytics Compliance: PCI DSS, HIPAA AttributeType: SIEM",None,ALERT,Palo Alto Next-Generation Firewall,Next Generation Firewall
+SMB Services allowed from internet - SIEM,Suspicious network traffic,"This use case detects inbound network traffic from SMB services detected by destination ports 138, 139, 445 Technique: Individual Event Analytics Compliance: SOX, PCI DSS, HIPAA Type: SIEM",High,ALERT,NULL,Next Generation Firewall
+Traffic to Known Attacker-15,Possible Security Breach,"Description: Multiple Dropped event followed by Successfully allowed/accepted event could be a possible Security Breach or a Successful attack.
+ Technique : Entity Attribution
+ Type : SIEM",Low,ALERT,Cisco ASA FirePower URL,Next Generation Firewall
+Repeat firewall drops-15,Suspicious network traffic,"Description: Repeated drops/denies/rejects on firewall traffic may be indicative of a malicious entity attempting to communicate to a Command and Control server or to receiving the malicious payload.
+ Technique Used: Aggregated event analysis on dropped/denied/rejected events Type : SIEM",None,ALERT,Cisco ASA FirePower URL,Next Generation Firewall
+DNS amplification by frequency of packets-15,DNS amplification,"Description: High Number of packets transmitted on DNS ports are indicative of a malicious actor spoofing an internal entity and attempting to launch a DoS attack from an external domain.
+ Technique Used: Behavior Anomaly for Data Transmitted",Medium,MALWARE,Cisco ASA FirePower URL,Next Generation Firewall
+Rare dns host resolved over firewall-15,DNS traffic anomaly,"Description: Rare DNS host resolved on firewall traffic may be indicative of a malicious entity attempting to communicate to a Command and Control server or to receiving the malicious payload.
+ Technique Used: Behavior Anomaly for rarity on network traffic",None,MALWARE,Cisco ASA FirePower URL,Next Generation Firewall
+Possible external port scan over system ports-15,Network Scanning and Enumeration,"Description: Port scan from an external entity over network traffic may be indicative of malicious external entity attempting to uncover vulnerable endpoints to gain access into a network.
+ Technique Used: Aggregated event analysis for network port scans",Low,MALWARE,Cisco ASA FirePower URL,Next Generation Firewall
+Repeat Attack-Foreign-15,Repeated Failed Events,"Description: High number of failed firewall events from a single  address which is not a part of Know internal Network could be a possible Targeted attack as well.
+ Technique : Entity Attribution
+ Type : SIEM",Low,ALERT,Cisco ASA FirePower URL,Next Generation Firewall
+Probable Successful Brute Force Attack on VPN-15,Possible Brute Force Attack,"Description: Successful Login after Repeat Failed logins could be indicative of a possible account takeover attempt using brute-force technique. Logon failure reason could further indicate the severity of this attack.
+ Technique: Entity attribution.
+ Type : SIEM",None,ALERT,Cisco ASA FirePower URL,Next Generation Firewall
+Brute Force Access on VPN-15,Possible Brute Force Attack,"Description: Repeat Failed logins could be indicative of a possible account takeover attempt using brute-force technique. Logon failure reason could further indicate the severity of this attack.
+ Technique: Entity attribution. Type : SIEM",None,ALERT,Cisco ASA FirePower URL,Next Generation Firewall
+Rare file type detected over firewall traffic-15,Suspicious file type detected,"Description: Rare file type on firewall traffic may be indicative of a malicious entity attempting to evade defensive measures.
+ Technique Used: Behavior Anomaly for rarity on network traffic",None,MALWARE,Cisco ASA FirePower URL,Next Generation Firewall
+Possible Impersonation Detected ,Possible Account Enumeration,                                                                               Version : WIN-20190307,Low,MALWARE,NULL,Microsoft Windows
+Rare interactive logon by service account,Remote Desktop Protocol," Rare interactive logon for a service account indicates a change in the typical authentication pattern for a service account. This could indicate an account being misused or using unauthorized elevated privileges.
+ 
+Technique: Behavior anomaly for rarity on logon type",Low,ACCOUNT MISUSE,,Microsoft Windows
+New Admin Account Added to Security Group - SIEM,Possible privilege misuse,"Description: Alerts on a rare account that is being added to a security group.                                Technique: Rare Behavior, Type: SIEM                                                      Compliance: SOX, PCI DSS, HIPAA",Low,ACCOUNT MISUSE,NULL,Microsoft Windows
+Windows activity by terminated accounts - SIEM,Activity by Terminated User," Activity by terminated users may be indicative of a possible account misuse or a gap in the de-provisioning process
+ Technique: Individual Event Analytics, Type: SIEM
+ Compliance: SOX, PCI DSS, HIPAA",Medium,IDENTITY ISSUE,,Microsoft Windows
+Multiple Lockouts - SIEM,Suspicious AD authentication,"Description: This anomaly may be indicative of a possible brute force attack where the attacker locked out an account by trying it many times.                                             Technique: Aggregated Event Analytics, Type: SIEM                                                  Compliance: HIPAA",Medium,ACCOUNT MISUSE,NULL,Microsoft Windows
+Suspicious executables on a machine,Process Injection," This anomaly monitors for suspicious executables run on a machine
+ 
+Technique: Entity Attribution, SIEM
+MITRE Mapping: https://attack.mitre.org/techniques/T1003/",None,ACCOUNT MISUSE,NULL,Microsoft Windows
+Suspicious Usage and execution of wmic process,Suspicious process execution,"Description:This policy detects scenarios that uses WMI to interact with local and remote systems and use it as a means to perform many tactic functions, such as gathering information for Discovery and remote Execution of files as part of Lateral Movement  Technique:  Individual Event Analytics    MITRE Technique: XSL Script Processing  (https://attack.mitre.org/techniques/T1220/)",Low,MALWARE,NULL,Microsoft Windows
+Abnormal number of network share object access,Data from Network Shared Drive,"Description: A spike in account accessing new network objects may be indicative of a possible snooping or a recon activity
+
+ Technique: Behavior anomaly on the network share access activity                                                                               Version : WIN-20190307",Low,MALWARE,,Microsoft Windows
+Abnormal number of logon failures,Brute Force,"Description: High number of logon failures could be indicative of a possible account takeover attempt or a possible brute force attempt. Logon failure reason could further indicate the severity of this attack
+  Technique: Behavior anomaly on the logon failure activity for an account 
+
+ MITRE Mapping: https://attack.mitre.org/techniques/T1110/",Low,ACCOUNT MISUSE,,Microsoft Windows
+Usage of potential Trusted Developer Utilities,Suspicious process execution,"Description: This policy detects scenarios that enable proxy execution that are typically used for development, debugging, and reverse engineering on a system that is not used for these purposes may be suspicious. Technique: Individual Event Analytics     MITRE Technique: Trusted Developer Utilities (https://attack.mitre.org/techniques/T1127/)",Low,MALWARE,NULL,Microsoft Windows
+Disabled User Account Was Enabled - SIEM,Possible privilege misuse,"Description: Identify user account that enabled terminated or disabled user accounts                       Technique: Individual Event Analytics, Type: SIEM                                                     Compliance: SOX, PCI DSS, HIPAA",None,ACCOUNT MISUSE,NULL,Microsoft Windows
+Rare privilege enumeration event,Account Discovery," This policy detects the occurrence of enumerating privileges for an account for the first time
+
+Technique: Event Rarity
+ MITRE Mapping: https://attack.mitre.org/techniques/T1087/",Low,ACCOUNT MISUSE,,Microsoft Windows
+Rare Host Accessed from an Account,Lateral Movement,                                                                               Version : WIN-20190307 SNYPER_ERROR_0001 : Incident Management/Command Screen can potentially have Display problems due to policy inconsistency ,Low,ACCOUNT MISUSE,NULL,Microsoft Windows
+Rare account enumeration event,Account Discovery,"Description: This policy detects the occurence of an account enumeration event for the first time
+Technique: Enumeration Behavior Anomaly",Low,SANDBOX-SNYPR,,Microsoft Windows
+Rare local account created,Create Account," This policy detects the creation of a local account for the first time on a machine. It might indicate a possible attempt to establish a backdoor for persistence
+Technique: Event Rarity
+MITRE Mapping: https://attack.mitre.org/techniques/T1136/",Low,ACCOUNT MISUSE,,Microsoft Windows
